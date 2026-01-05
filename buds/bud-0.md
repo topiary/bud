@@ -114,6 +114,11 @@ BUDs progress through the following stages, tracked as columns on the
    - The PR will automatically appear in the "Draft" column of the
      [GitHub Project board][project-board]
 
+> [!NOTE]
+> The BUD repository forces squash merges of PRs. For that reason, we
+> ask that PR titles follow the ["Conventional Commits"][conventional-commits]
+> style. Branch commits needn't follow this style, but it is encouraged.
+
 5. **Iterate and progress**: Respond to feedback, refine your proposal
    and move through the lifecycle stages.
 
@@ -218,3 +223,4 @@ subsequent BUDs as we gain experience with the workflow.
 
 <!-- Links -->
 [project-board]: https://github.com/orgs/topiary/projects/1/views/1
+[conventional-commits]: https://www.conventionalcommits.org
