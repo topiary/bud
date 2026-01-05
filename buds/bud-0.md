@@ -37,8 +37,8 @@ documentation. The BUD process ensures that:
 A BUD is a design document that describes a proposed change to Topiary.
 BUDs are specifically for **non-trivial changes and enhancements**, not
 everyday maintenance tasks. Each BUD progresses through a defined
-lifecycle tracked via [GitHub Project board][project-board], with the PR itself serving
-as both the proposal document and discussion forum.
+lifecycle tracked via [GitHub Project board][project-board], with the PR
+itself serving as both the proposal document and discussion forum.
 
 ### Who can create BUDs?
 
@@ -196,12 +196,13 @@ consistent.
 
 ## Testing strategy
 
-The BUD process itself will be validated through use. We should monitor whether:
+The BUD process itself will be validated through use. We should monitor
+whether:
 
-- contributors find the process clear and accessible
+- Contributors find the process clear and accessible
 - BUDs successfully capture design rationale
-- the kanban board accurately reflects BUD states
-- rejected or stalled BUDs indicate process friction
+- The kanban board accurately reflects BUD states
+- Rejected or stalled BUDs indicate process friction
 
 Adjustments to the process can be made through subsequent BUDs.
 
