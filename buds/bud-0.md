@@ -48,6 +48,12 @@ repository and submit their BUD via pull request.
 
 ### BUD lifecycle
 
+> [!TIP]
+> Before writing your proposal and following the guidance here, you
+> should discuss your idea in the [New BUDs][discussions] discussion
+> forum. This is an informal stage to triage your proposal, as it may be
+> better suited as a Topiary issue.
+
 BUDs progress through the following stages, tracked as columns on the
 [GitHub Project board][project-board]:
 
@@ -85,6 +91,12 @@ BUDs progress through the following stages, tracked as columns on the
    abandoned. This can branch from any earlier stage.
 
 ### How to create a new BUD
+
+Before embarking on the BUD process, you should first discuss your idea
+in the [New BUDs][discussions] discussion forum. This is an informal
+stage to triage your proposal, as it may be better suited as a Topiary
+issue. You can expect the Topiary Team to engage with your discussion in
+a timely manner.
 
 1. **Copy the template**: Start by copying
    [`TEMPLATE.md`](../TEMPLATE.md) to `buds/bud-[number].md`. If you
@@ -223,4 +235,5 @@ subsequent BUDs as we gain experience with the workflow.
 
 <!-- Links -->
 [project-board]: https://github.com/orgs/topiary/projects/1/views/1
+[discussions]: https://github.com/topiary/bud/discussions/categories/new-buds
 [conventional-commits]: https://www.conventionalcommits.org
