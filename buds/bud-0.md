@@ -196,12 +196,12 @@ consistent.
 
 ## Testing strategy
 
-The BUD process itself will be validated through use. We should monitor:
+The BUD process itself will be validated through use. We should monitor whether:
 
-- Whether contributors find the process clear and accessible
-- Whether BUDs successfully capture design rationale
-- Whether the kanban board accurately reflects BUD states
-- Whether rejected or stalled BUDs indicate process friction
+- contributors find the process clear and accessible
+- BUDs successfully capture design rationale
+- the kanban board accurately reflects BUD states
+- rejected or stalled BUDs indicate process friction
 
 Adjustments to the process can be made through subsequent BUDs.
 
