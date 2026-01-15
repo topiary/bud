@@ -150,3 +150,10 @@ no impact.
   For the Topiary Book, option (2) is probably the only appropriate
   strategy because the Book is not manifested as a release artefact (and
   cannot be without interfering with Topiary's `dist` release process).
+
+- Relatedly, when dependencies of the website are changed, how can we
+  trigger a new build of the website (e.g., if the Topiary Book is
+  updated, that should reflected on the website)? I believe GitHub
+  Actions _can_ trigger other actions across repositories, but this
+  needs to be carefully looked into; we shouldn't expect contributors to
+  have to make cousin PRs in separate repositories manually.
