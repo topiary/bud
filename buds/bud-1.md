@@ -91,6 +91,41 @@ repositories.
 - The Tweag DNS records will need to be updated to point to the new
   GitHub Pages endpoint.
 
+### Build and deployment strategy
+
+The broken-out subcomponents (the Topiary playground and Book) will be
+integrated with the Topiary website using cross-repository GitHub Action
+triggers via `repository_dispatch` events with a PAT. This allows
+changes to propagate automatically without requiring manual cousin PRs.
+
+#### Topiary playground
+
+- **Build location**: Playground repository's own CI
+- **Artefact storage**: GitHub releases
+- **Versioning**: Release builds only
+- **Website trigger**: When a playground release is published, trigger
+  the website CI via `repository_dispatch` to pull in the new release
+  artefacts
+
+Since the playground is currently dormant and releases will be
+infrequent and deliberate, this approach ensures artefacts are built
+once and reused, with the website updating only when there's a new
+release.
+
+#### Topiary Book
+
+- **Build location**: Website CI (as a subtask)
+- **Artefact storage**: n/a (not a standalone release artefact)
+- **Versioning**: Latest from default branch
+- **Website trigger**: Any commit to the default branch of the main
+  Topiary repository that modifies book source files (path filter:
+  `docs/book/**`) triggers the website CI via `repository_dispatch`
+
+The Topiary Book is living documentation that should stay current with
+the main repository. Building it on-demand in the website CI avoids
+duplication and ensures the website always reflects the latest
+documentation.
+
 ## Alternatives considered
 
 Leave the Topiary repository where it is; i.e., do nothing. However,
@@ -133,27 +168,3 @@ warning, like it does when repository names change.
 
 Documentation will remain under the Topiary repository, so there will be
 no impact.
-
-## Unresolved questions
-
-- For the broken out subcomponents that are dependencies of the website,
-  should we:
-
-  1. Build the subcomponents in the broken out repository's CI and let
-     the website pull in the latest release, when its CI builds?
-
-  2. Or: When the website's CI builds, checkout the appropriate
-     subcomponents and build them as subtasks?
-
-  This question is focused on the Topiary playground.
-
-  For the Topiary Book, option (2) is probably the only appropriate
-  strategy because the Book is not manifested as a release artefact (and
-  cannot be without interfering with Topiary's `dist` release process).
-
-- Relatedly, when dependencies of the website are changed, how can we
-  trigger a new build of the website (e.g., if the Topiary Book is
-  updated, that should reflected on the website)? I believe GitHub
-  Actions _can_ trigger other actions across repositories, but this
-  needs to be carefully looked into; we shouldn't expect contributors to
-  have to make cousin PRs in separate repositories manually.
