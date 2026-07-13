@@ -2,7 +2,7 @@
 bud: 2 (TBD)
 title: "`topiary test` query tester"
 author: "@mkatychev"
-pr: 2
+pr: 10
 ---
 
 # Proposal for `topiary test`
